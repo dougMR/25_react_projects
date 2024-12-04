@@ -1,0 +1,23 @@
+.container {
+    min-height: 100vh;
+    width: 100%;
+    & .color-name-display {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 6vh;
+        margin-top: 8vh;
+        & > * {
+            text-shadow: 0 0 0.05em black,0 0 0.05em black,0 0 0.05em black;
+            /* -webkit-text-stroke: 0.025em black; */
+            /* text-shadow: 0.05em 0.05em 0 black, -0.05em -0.05em 0 black; */
+            /* , 
+                -0.05em 0.05em 0 black, 0.05em -0.05em 0 black,
+                0 -0.05em 0 black, 0 0.05em 0 black, -0.05em 0 0 black,
+                0.05em 0 0 black;
+                */
+        }
+    }
+}
