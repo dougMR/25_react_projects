@@ -4,9 +4,7 @@ import "./style.css";
 let firstLoad = true;
 
 const LoadMoreData = () => {
-    {
-        console.log("RENDER COMPONENT");
-    }
+    console.log("RENDER COMPONENT");
     const batchSize = 4;
     const productLimit = 60;
     const [loading, setLoading] = useState(false);
@@ -44,12 +42,12 @@ const LoadMoreData = () => {
         console.log("USEEFFECT()!");
         //MZM 11/29/24 First load is required because the local dev server
         //runs useEffect twice. This bug won't happen on PROD, but this check
-        //doesn't cause issues on PROD either. 
+        //doesn't cause issues on PROD either.
         if (!loading && firstLoad) fetchProducts();
         firstLoad = false;
         return () => {
-            console.log("USEEFFECT CLEANUP()")
-        }
+            console.log("USEEFFECT CLEANUP()");
+        };
     }, []);
 
     const loadMore = () => {
@@ -99,7 +97,9 @@ const LoadMoreData = () => {
                     LOAD MORE
                 </button>
                 {batchCount >= productLimit / batchSize ? (
-                    <p className="max-loaded-message">You have loaded {productLimit} products.</p>
+                    <p className="max-loaded-message">
+                        You have loaded {productLimit} products.
+                    </p>
                 ) : null}
             </div>
             {console.log("\r\n------------End Drawing Page------------")}
